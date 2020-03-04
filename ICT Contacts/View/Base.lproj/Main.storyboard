@@ -79,6 +79,120 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="118.52678571428571"/>
         </scene>
+        <!--Student View Controller-->
+        <scene sceneID="yK8-mk-xAN">
+            <objects>
+                <viewController storyboardIdentifier="StudentViewController" id="zB5-2I-91a" customClass="StudentViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nAo-EB-DKr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJZ-BY-nbk">
+                                <rect key="frame" x="20" y="288" width="181" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="First Year">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="firstYearAction:" destination="zB5-2I-91a" eventType="touchUpInside" id="4hd-yY-XdZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZT-sh-ZLV">
+                                <rect key="frame" x="20" y="471" width="181" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Third Year">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="thirdYearAction:" destination="zB5-2I-91a" eventType="touchUpInside" id="Gvl-n3-ymi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQK-dO-Aq7">
+                                <rect key="frame" x="213" y="288" width="181" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Second Year">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="secondYearAction:" destination="zB5-2I-91a" eventType="touchUpInside" id="Caw-7p-KcN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygz-EJ-ooe">
+                                <rect key="frame" x="213" y="471" width="181" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Fourth Year">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="fourthYearAction:" destination="zB5-2I-91a" eventType="touchUpInside" id="9kB-3O-7qG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="pJf-gr-P9P"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yuz-Zc-N6V"/>
+                    <connections>
+                        <outlet property="firstYearBtn" destination="ZJZ-BY-nbk" id="9O4-wx-3WN"/>
+                        <outlet property="fourthYearBtn" destination="Ygz-EJ-ooe" id="ZHo-bs-C96"/>
+                        <outlet property="secondYearBtn" destination="yQK-dO-Aq7" id="HV8-OH-ygn"/>
+                        <outlet property="thirdYearBtn" destination="HZT-sh-ZLV" id="VYG-Kt-onP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfs-qT-PdG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781.1594202898552" y="118.52678571428571"/>
+        </scene>
+        <!--First Year View Controller-->
+        <scene sceneID="c4v-sB-gAu">
+            <objects>
+                <viewController storyboardIdentifier="FirstYearViewController" id="sjr-rT-Qo8" customClass="FirstYearViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WkU-aY-O3E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cna-RR-fxe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZkF-F3-7GQ" firstAttribute="bottom" secondItem="Cna-RR-fxe" secondAttribute="bottom" id="5Vm-75-RIE"/>
+                            <constraint firstItem="Cna-RR-fxe" firstAttribute="top" secondItem="ZkF-F3-7GQ" secondAttribute="top" id="QCn-I5-pZO"/>
+                            <constraint firstItem="ZkF-F3-7GQ" firstAttribute="trailing" secondItem="Cna-RR-fxe" secondAttribute="trailing" id="hGw-bw-UWw"/>
+                            <constraint firstItem="Cna-RR-fxe" firstAttribute="leading" secondItem="ZkF-F3-7GQ" secondAttribute="leading" id="xka-KH-WAB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZkF-F3-7GQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j66-Tr-ZMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2544.9275362318845" y="124.55357142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="33e-W7-Oa9">
+            <objects>
+                <viewController id="1Lu-Pb-hS6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uKn-6w-nUA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OzC-0N-01N"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oe5-Uy-d8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3277" y="128"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GXN-Og-FN4">
             <objects>

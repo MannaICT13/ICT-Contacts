@@ -32,7 +32,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func studentBtnAction(_ sender: UIButton) {
+    
+        let studentVC = self.storyboard?.instantiateViewController(identifier: "StudentViewController") as! StudentViewController
+        self.navigationController?.pushViewController(studentVC, animated: true)
+        
+     //   performSegue(withIdentifier: "segue", sender: nil)
+        
+        
+      
     }
+   
     
     @IBAction func teacherBtnAction(_ sender: UIButton) {
     }
