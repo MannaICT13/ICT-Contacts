@@ -101,10 +101,11 @@
 		2ADABDCF241046530054797D /* ICT Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				2ADABE0624104FC80054797D /* Model */,
+				2ADABE0524104FBA0054797D /* View */,
+				2ADABE0324104F690054797D /* Controller */,
 				2ADABDD0241046530054797D /* AppDelegate.swift */,
 				2ADABDD2241046530054797D /* SceneDelegate.swift */,
-				2ADABDD4241046530054797D /* ViewController.swift */,
-				2ADABDD6241046530054797D /* Main.storyboard */,
 				2ADABDDC241046570054797D /* Assets.xcassets */,
 				2ADABDDE241046570054797D /* LaunchScreen.storyboard */,
 				2ADABDE1241046570054797D /* Info.plist */,
@@ -129,6 +130,37 @@
 				2ADABDF7241046570054797D /* Info.plist */,
 			);
 			path = "ICT ContactsUITests";
+			sourceTree = "<group>";
+		};
+		2ADABE0324104F690054797D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2ADABE0424104F850054797D /* HomeController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2ADABE0424104F850054797D /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				2ADABDD4241046530054797D /* ViewController.swift */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		2ADABE0524104FBA0054797D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2ADABDD6241046530054797D /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2ADABE0624104FC80054797D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
