@@ -18,6 +18,7 @@
 		2ADABDF6241046570054797D /* ICT_ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABDF5241046570054797D /* ICT_ContactsUITests.swift */; };
 		2ADABE09241050F50054797D /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABE08241050F50054797D /* StudentViewController.swift */; };
 		2ADABE0B2410616B0054797D /* FirstYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABE0A2410616B0054797D /* FirstYearViewController.swift */; };
+		2ADABE0D241064150054797D /* AddFirstYearStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABE0C241064150054797D /* AddFirstYearStudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2ADABDF7241046570054797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ADABE08241050F50054797D /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		2ADABE0A2410616B0054797D /* FirstYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstYearViewController.swift; sourceTree = "<group>"; };
+		2ADABE0C241064150054797D /* AddFirstYearStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFirstYearStudentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				2ADABE08241050F50054797D /* StudentViewController.swift */,
 				2ADABE0A2410616B0054797D /* FirstYearViewController.swift */,
+				2ADABE0C241064150054797D /* AddFirstYearStudentViewController.swift */,
 			);
 			path = StudentViewController;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ADABE0D241064150054797D /* AddFirstYearStudentViewController.swift in Sources */,
 				2ADABE09241050F50054797D /* StudentViewController.swift in Sources */,
 				2ADABDD5241046530054797D /* ViewController.swift in Sources */,
 				2ADABDD1241046530054797D /* AppDelegate.swift in Sources */,

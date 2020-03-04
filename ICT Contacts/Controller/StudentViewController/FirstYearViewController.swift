@@ -13,11 +13,15 @@ class FirstYearViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: #selector(addFirstYearStudent(_ :)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFirstYearStudent(_ :)))
     }
+    
+    
     
     @objc func addFirstYearStudent(_ sender : UIBarButtonItem){
         
+        let addFirstYearVC = self.storyboard?.instantiateViewController(identifier: "AddFirstYearStudentViewController") as! AddFirstYearStudentViewController
+        self.navigationController?.pushViewController(addFirstYearVC, animated: true)
         
     }
 
