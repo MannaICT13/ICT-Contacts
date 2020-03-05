@@ -59,8 +59,8 @@ class AddStudentViewController: UIViewController {
     @IBAction func studentSaveAction(_ sender: UIButton) {
         
         
-        let _ = self.studentImg.image?.jpegData(compressionQuality: 0.75)
-        let pngStudentImg = self.studentImg.image?.pngData()
+        let pngStudentImg = self.studentImg.image?.jpegData(compressionQuality: 0.20)
+        //let pngStudentImg = self.studentImg.image?.pngData()
         
         
         

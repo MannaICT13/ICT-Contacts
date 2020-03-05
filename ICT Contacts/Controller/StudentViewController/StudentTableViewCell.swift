@@ -29,6 +29,11 @@ class StudentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        studentCellYear.isEnabled = true
+        studentCellEmail.isHidden = true
+        studentCellPhone.isHidden = true
+        
        
     }
 

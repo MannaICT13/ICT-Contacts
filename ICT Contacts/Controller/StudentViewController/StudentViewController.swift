@@ -14,21 +14,27 @@ class StudentViewController: UIViewController {
     
     var student = [Student]()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
       
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
         
-       self.view.backgroundColor = UIColor.black
+      // self.view.backgroundColor = UIColor.black
         
         self.student = StudentDatabaseHelper.studentInstance.getStudentData()
     }
     
     
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         
-        self.student = StudentDatabaseHelper.studentInstance.getStudentData()
+       self.student = StudentDatabaseHelper.studentInstance.getStudentData()
            
        }
    
@@ -56,7 +62,7 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 90
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -83,6 +89,7 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
             , nil) in
             
             self.student.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
             StudentDatabaseHelper.studentInstance.deleteStudentData(index: indexPath.row)
             
             
