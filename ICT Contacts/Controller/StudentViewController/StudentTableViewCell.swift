@@ -10,33 +10,26 @@ import UIKit
 
 class StudentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var studentCellImg: UIImageView!
     
-    @IBOutlet weak var studentCellImg: UIView!
+    @IBOutlet weak var studetnCellName: UILabel!
     
-    @IBOutlet weak var studentCellName: UIView!
+    @IBOutlet weak var studentCellDept: UILabel!
     
-    @IBOutlet weak var studentCellDept: UIView!
+    @IBOutlet weak var studentCellSession: UILabel!
     
-    
-    @IBOutlet weak var studentCellSession: UIView!
-    
-    @IBOutlet weak var studentCellYear: UIView!
-    
-    @IBOutlet weak var studentCellEmail: UIView!
-    
-    @IBOutlet weak var studentCellPhone: UIView!
+    @IBOutlet weak var studentCellYear: UILabel!
     
     
-    var sImg : UIImageView!
+    @IBOutlet weak var studentCellEmail: UILabel!
+    
+    @IBOutlet weak var studentCellPhone: UILabel!
+    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        studentCellImg = sImg
-        
-        
-        
+       
     }
 
 

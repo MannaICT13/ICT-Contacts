@@ -13,6 +13,7 @@ class StudentViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var student = [Student]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,9 +36,9 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         
         
         let cell : StudentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as! StudentTableViewCell
+        cell.sImg.image = UIImage(data: student[indexPath.row].img!)
+        cell.studentCellName
         
-        //cell.sImg.image = student[]
-       // cell.sImg.image = student[indexPath.row].img
         
         return cell
         

@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StudentTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="180" id="WcD-Uw-A51" customClass="StudentTableViewCell" customModule="ICT_Contacts" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StudentTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StudentTableViewCell" rowHeight="180" id="WcD-Uw-A51" customClass="StudentTableViewCell" customModule="ICT_Contacts" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WcD-Uw-A51" id="eKv-Hp-85S">
@@ -147,13 +147,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="studentCellDept" destination="eKv-Hp-85S" id="XFc-hq-2yA"/>
-                                            <outlet property="studentCellEmail" destination="eKv-Hp-85S" id="Hby-Ma-4Y2"/>
-                                            <outlet property="studentCellImg" destination="eKv-Hp-85S" id="Ob4-p5-B9f"/>
-                                            <outlet property="studentCellName" destination="eKv-Hp-85S" id="Hjs-3U-nw7"/>
-                                            <outlet property="studentCellPhone" destination="eKv-Hp-85S" id="NBw-IC-xHr"/>
-                                            <outlet property="studentCellSession" destination="eKv-Hp-85S" id="nrW-Ea-FUI"/>
-                                            <outlet property="studentCellYear" destination="eKv-Hp-85S" id="oTL-Ud-0fA"/>
+                                            <outlet property="studentCellDept" destination="vxE-XR-0t4" id="iiG-9n-vGL"/>
+                                            <outlet property="studentCellEmail" destination="3KX-hV-YgJ" id="kPO-px-VOz"/>
+                                            <outlet property="studentCellImg" destination="UTa-Qk-BwK" id="Ht2-J3-Ex5"/>
+                                            <outlet property="studentCellPhone" destination="SNq-P3-Zed" id="7x9-Cw-F8S"/>
+                                            <outlet property="studentCellSession" destination="Kgc-u6-Ejh" id="0bJ-Za-F7c"/>
+                                            <outlet property="studentCellYear" destination="hdp-Za-OHV" id="l2w-Y9-nrg"/>
+                                            <outlet property="studetnCellName" destination="41r-1c-yuV" id="2IS-Rs-ZDK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
