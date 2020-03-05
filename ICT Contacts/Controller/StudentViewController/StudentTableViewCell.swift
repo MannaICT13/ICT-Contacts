@@ -26,6 +26,7 @@ class StudentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var studentCellPhone: UIView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

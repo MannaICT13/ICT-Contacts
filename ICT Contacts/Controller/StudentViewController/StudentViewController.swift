@@ -21,3 +21,25 @@ class StudentViewController: UIViewController {
 
 
 }
+extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //
+        let cell : StudentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as! StudentTableViewCell
+        return cell;
+        
+    }
+    
+    
+    
+    
+    
+    
+}
