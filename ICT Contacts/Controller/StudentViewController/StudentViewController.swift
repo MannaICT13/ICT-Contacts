@@ -20,7 +20,8 @@ class StudentViewController: UIViewController {
       
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
         
-        self.view.backgroundColor = UIColor.black
+       self.view.backgroundColor = UIColor.black
+        
         self.student = StudentDatabaseHelper.studentInstance.getStudentData()
     }
     
@@ -42,6 +43,8 @@ class StudentViewController: UIViewController {
 
 
 }
+
+
 extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
     
     
@@ -71,6 +74,30 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view
+            , nil) in
+            
+    
+            
+        }
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, nil) in
+            
+            
+        }
+        
+        
+        let config = UISwipeActionsConfiguration(actions: [delete,edit])
+        config.performsFirstActionWithFullSwipe = false
+        
+        return config
+        
+        
         
     }
     
