@@ -67,6 +67,29 @@ class StudentDatabaseHelper: NSObject {
     }
     
     
+    func deleteStudentData(index : Int){
+        
+        var student = getStudentData()
+        
+         let deleteObject = student.remove(at: index) as NSManagedObject
+        
+         context.delete(deleteObject)
+        
+        do{
+            try context.save()
+             
+            
+        }catch{
+            
+            
+            print("Error deleting data",error.localizedDescription)
+            
+        }
+        
+        
+        
+        
+    }
     
     
     

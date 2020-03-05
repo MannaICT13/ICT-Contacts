@@ -82,6 +82,11 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view
             , nil) in
             
+            self.student.remove(at: indexPath.row)
+            StudentDatabaseHelper.studentInstance.deleteStudentData(index: indexPath.row)
+            
+            
+            
     
             
         }
