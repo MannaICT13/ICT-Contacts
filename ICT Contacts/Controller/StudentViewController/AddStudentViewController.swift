@@ -65,7 +65,7 @@ class AddStudentViewController: UIViewController {
         
         let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName! ,"studentDept":studentDept! ,"studentSession":studentSession!,"studentYear":studentYear!,"studentEmail": studentEmail! ,"studentPhone":studentPhone!]
         
-       StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
+        StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
         
         
         

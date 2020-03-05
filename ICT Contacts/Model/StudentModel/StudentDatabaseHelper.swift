@@ -45,9 +45,24 @@ class StudentDatabaseHelper: NSObject {
         
         
         
+    }
+    func getStudentData() -> [Student]{
         
         
+        var student = [Student]()
         
+         let studentData = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        
+        do{
+            
+            try student = context.fetch(studentData) as! [Student]
+        }catch{
+            
+            print("Error getting data ",error.localizedDescription)
+        }
+        
+        
+        return student
         
     }
     
