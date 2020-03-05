@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2E9409241104F300458D56 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E9408241104F300458D56 /* StudentViewController.swift */; };
+		2A2E940B2411056400458D56 /* AddStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E940A2411056400458D56 /* AddStudentViewController.swift */; };
 		2ADABDD1241046530054797D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABDD0241046530054797D /* AppDelegate.swift */; };
 		2ADABDD3241046530054797D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABDD2241046530054797D /* SceneDelegate.swift */; };
 		2ADABDD5241046530054797D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABDD4241046530054797D /* ViewController.swift */; };
@@ -16,9 +18,6 @@
 		2ADABDE0241046570054797D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ADABDDE241046570054797D /* LaunchScreen.storyboard */; };
 		2ADABDEB241046570054797D /* ICT_ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABDEA241046570054797D /* ICT_ContactsTests.swift */; };
 		2ADABDF6241046570054797D /* ICT_ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABDF5241046570054797D /* ICT_ContactsUITests.swift */; };
-		2ADABE09241050F50054797D /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABE08241050F50054797D /* StudentViewController.swift */; };
-		2ADABE0B2410616B0054797D /* FirstYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABE0A2410616B0054797D /* FirstYearViewController.swift */; };
-		2ADABE0D241064150054797D /* AddFirstYearStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADABE0C241064150054797D /* AddFirstYearStudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A2E9408241104F300458D56 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		2A2E940A2411056400458D56 /* AddStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudentViewController.swift; sourceTree = "<group>"; };
 		2ADABDCD241046530054797D /* ICT Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICT Contacts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADABDD0241046530054797D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ADABDD2241046530054797D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +55,6 @@
 		2ADABDF1241046570054797D /* ICT ContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ICT ContactsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADABDF5241046570054797D /* ICT_ContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICT_ContactsUITests.swift; sourceTree = "<group>"; };
 		2ADABDF7241046570054797D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2ADABE08241050F50054797D /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
-		2ADABE0A2410616B0054797D /* FirstYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstYearViewController.swift; sourceTree = "<group>"; };
-		2ADABE0C241064150054797D /* AddFirstYearStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFirstYearStudentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +171,8 @@
 		2ADABE07241050AD0054797D /* StudentViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2ADABE08241050F50054797D /* StudentViewController.swift */,
-				2ADABE0A2410616B0054797D /* FirstYearViewController.swift */,
-				2ADABE0C241064150054797D /* AddFirstYearStudentViewController.swift */,
+				2A2E9408241104F300458D56 /* StudentViewController.swift */,
+				2A2E940A2411056400458D56 /* AddStudentViewController.swift */,
 			);
 			path = StudentViewController;
 			sourceTree = "<group>";
@@ -311,12 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ADABE0D241064150054797D /* AddFirstYearStudentViewController.swift in Sources */,
-				2ADABE09241050F50054797D /* StudentViewController.swift in Sources */,
+				2A2E9409241104F300458D56 /* StudentViewController.swift in Sources */,
 				2ADABDD5241046530054797D /* ViewController.swift in Sources */,
+				2A2E940B2411056400458D56 /* AddStudentViewController.swift in Sources */,
 				2ADABDD1241046530054797D /* AppDelegate.swift in Sources */,
 				2ADABDD3241046530054797D /* SceneDelegate.swift in Sources */,
-				2ADABE0B2410616B0054797D /* FirstYearViewController.swift in Sources */,
 				2ADABDDB241046530054797D /* ICT_Contacts.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

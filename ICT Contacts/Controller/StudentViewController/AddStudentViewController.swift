@@ -1,5 +1,5 @@
 //
-//  StudentViewController.swift
+//  AddStudentViewController.swift
 //  ICT Contacts
 //
 //  Created by Md Khaled Hasan Manna on 5/3/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StudentViewController: UIViewController {
+class AddStudentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
