@@ -17,9 +17,18 @@ class StudentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
      
     }
     
+    @objc func addStudent(_ sender : UIBarButtonItem){
+        
+        let addStudentVc = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
+        self.navigationController?.pushViewController(addStudentVc, animated: true)
+        
+        
+    }
 
 
 }
@@ -30,7 +39,7 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return student.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

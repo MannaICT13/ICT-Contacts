@@ -47,7 +47,7 @@ class AddStudentViewController: UIViewController {
     }
     
     @objc func  seletStudentImg(_ sender : UITapGestureRecognizer){
-        
+        openImage()
         
     }
     
@@ -99,6 +99,7 @@ extension AddStudentViewController : UIImagePickerControllerDelegate,UINavigatio
             
             
         }
+        self.dismiss(animated: true, completion: nil)
         
     }
     
