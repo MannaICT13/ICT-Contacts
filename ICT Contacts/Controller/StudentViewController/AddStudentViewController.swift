@@ -35,6 +35,8 @@ class AddStudentViewController: UIViewController {
 
        
     }
+   
+   
     
     func tapGesture(){
         
@@ -63,7 +65,7 @@ class AddStudentViewController: UIViewController {
         
         
         
-        let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName! ,"studentDept":studentDept! ,"studentSession":studentSession!,"studentYear":studentYear!,"studentEmail": studentEmail! ,"studentPhone":studentPhone!]
+        let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName.text! ,"studentDept":studentDept.text! ,"studentSession":studentSession.text!,"studentYear":studentYear.text!,"studentEmail": studentEmail.text! ,"studentPhone":studentPhone.text!]
         
         StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
         

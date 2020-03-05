@@ -19,8 +19,18 @@ class StudentViewController: UIViewController {
 
       
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
-     
+        
+        self.view.backgroundColor = UIColor.black
+        self.student = StudentDatabaseHelper.studentInstance.getStudentData()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.student = StudentDatabaseHelper.studentInstance.getStudentData()
+           
+       }
+   
     
     @objc func addStudent(_ sender : UIBarButtonItem){
         
@@ -56,6 +66,8 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         cell.studentCellYear.text = student[indexPath.row].year
         cell.studentCellEmail.text = student[indexPath.row].email
         cell.studentCellPhone.text = student[indexPath.row].phone
+        
+        cell.backgroundColor = UIColor.black
         
         
         return cell
