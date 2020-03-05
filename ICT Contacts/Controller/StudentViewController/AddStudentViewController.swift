@@ -37,6 +37,18 @@ class AddStudentViewController: UIViewController {
     @IBAction func studentSaveAction(_ sender: UIButton) {
         
         
+        let _ = self.studentImg.image?.jpegData(compressionQuality: 0.75)
+        let pngStudentImg = self.studentImg.image?.pngData()
+        
+        
+        
+        
+        let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName! ,"studentDept":studentDept! ,"studentSession":studentSession!,"studentYear":studentYear!,"studentEmail": studentEmail! ,"studentPhone":studentPhone!]
+        
+     //   StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
+        
+        
+        
     }
     
     
