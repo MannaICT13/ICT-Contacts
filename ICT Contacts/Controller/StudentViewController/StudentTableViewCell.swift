@@ -33,8 +33,21 @@ class StudentTableViewCell: UITableViewCell {
         studentCellYear.isEnabled = true
         studentCellEmail.isHidden = true
         studentCellPhone.isHidden = true
+        circleImage()
         
        
+    }
+    
+    
+    func circleImage(){
+        
+        studentCellImg.layer.borderWidth = 1
+        studentCellImg.layer.masksToBounds = false
+        studentCellImg.layer.borderColor = UIColor.black.cgColor
+        studentCellImg.layer.cornerRadius = studentCellImg.frame.height/2
+        studentCellImg.clipsToBounds = true
+        
+        
     }
 
 
