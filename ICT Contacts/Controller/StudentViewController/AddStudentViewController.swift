@@ -26,12 +26,32 @@ class AddStudentViewController: UIViewController {
     @IBOutlet weak var studentPhone: UITextField!
     
     
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tapGesture()
 
        
     }
+    
+    func tapGesture(){
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(seletStudentImg(_ :)))
+        tapGesture.numberOfTapsRequired = 1
+        self.studentImg.isUserInteractionEnabled = true
+        self.studentImg.addGestureRecognizer(tapGesture)
+        
+        
+    }
+    
+    @objc func  seletStudentImg(_ sender : UITapGestureRecognizer){
+        
+        
+    }
+    
+    
     
 
     @IBAction func studentSaveAction(_ sender: UIButton) {
@@ -45,12 +65,42 @@ class AddStudentViewController: UIViewController {
         
         let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName! ,"studentDept":studentDept! ,"studentSession":studentSession!,"studentYear":studentYear!,"studentEmail": studentEmail! ,"studentPhone":studentPhone!]
         
-     //   StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
+       StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
         
         
         
     }
     
+    
+    
+    
+    
+}
+extension AddStudentViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    
+    func openImage(){
+        
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .savedPhotosAlbum
+        self.present(imagePicker, animated: true, completion: nil)
+        
+        
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let img = info[.originalImage] as? UIImage {
+            
+            self.studentImg.image = img
+            studentImg.contentMode = .scaleAspectFill
+            studentImg.backgroundColor = UIColor.clear
+            
+            
+        }
+        
+    }
     
     
     

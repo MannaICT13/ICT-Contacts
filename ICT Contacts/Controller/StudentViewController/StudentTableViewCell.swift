@@ -27,8 +27,15 @@ class StudentTableViewCell: UITableViewCell {
     @IBOutlet weak var studentCellPhone: UIView!
     
     
+    var sImg : UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        studentCellImg = sImg
+        
+        
         
     }
 
