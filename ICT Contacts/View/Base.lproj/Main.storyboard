@@ -80,85 +80,152 @@
             <point key="canvasLocation" x="1042.0289855072465" y="118.52678571428571"/>
         </scene>
         <!--Student View Controller-->
-        <scene sceneID="c4v-sB-gAu">
+        <scene sceneID="lhq-sQ-KjK">
             <objects>
-                <viewController storyboardIdentifier="FirstYearViewController" id="sjr-rT-Qo8" customClass="StudentViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WkU-aY-O3E">
+                <viewController storyboardIdentifier="StudentViewController" id="wdz-c4-3i5" customClass="StudentViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XE3-sC-YfZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cna-RR-fxe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iei-mJ-J2Z">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StudentTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="180" id="WcD-Uw-A51" customClass="StudentTableViewCell" customModule="ICT_Contacts" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WcD-Uw-A51" id="eKv-Hp-85S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTa-Qk-BwK">
+                                                    <rect key="frame" x="20" y="11" width="82" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41r-1c-yuV">
+                                                    <rect key="frame" x="110" y="11" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxE-XR-0t4">
+                                                    <rect key="frame" x="110" y="40" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgc-u6-Ejh">
+                                                    <rect key="frame" x="110" y="65" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdp-Za-OHV">
+                                                    <rect key="frame" x="110" y="94" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KX-hV-YgJ">
+                                                    <rect key="frame" x="110" y="118" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNq-P3-Zed">
+                                                    <rect key="frame" x="110" y="147" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="studentCellDept" destination="eKv-Hp-85S" id="XFc-hq-2yA"/>
+                                            <outlet property="studentCellEmail" destination="eKv-Hp-85S" id="Hby-Ma-4Y2"/>
+                                            <outlet property="studentCellImg" destination="eKv-Hp-85S" id="Ob4-p5-B9f"/>
+                                            <outlet property="studentCellName" destination="eKv-Hp-85S" id="Hjs-3U-nw7"/>
+                                            <outlet property="studentCellPhone" destination="eKv-Hp-85S" id="NBw-IC-xHr"/>
+                                            <outlet property="studentCellSession" destination="eKv-Hp-85S" id="nrW-Ea-FUI"/>
+                                            <outlet property="studentCellYear" destination="eKv-Hp-85S" id="oTL-Ud-0fA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="sjr-rT-Qo8" id="pUj-dF-eon"/>
-                                    <outlet property="delegate" destination="sjr-rT-Qo8" id="b0f-9L-aZk"/>
+                                    <outlet property="dataSource" destination="wdz-c4-3i5" id="uQr-f2-J4o"/>
+                                    <outlet property="delegate" destination="wdz-c4-3i5" id="XeO-8a-yUf"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZkF-F3-7GQ" firstAttribute="bottom" secondItem="Cna-RR-fxe" secondAttribute="bottom" id="5Vm-75-RIE"/>
-                            <constraint firstItem="Cna-RR-fxe" firstAttribute="top" secondItem="ZkF-F3-7GQ" secondAttribute="top" id="QCn-I5-pZO"/>
-                            <constraint firstItem="ZkF-F3-7GQ" firstAttribute="trailing" secondItem="Cna-RR-fxe" secondAttribute="trailing" id="hGw-bw-UWw"/>
-                            <constraint firstItem="Cna-RR-fxe" firstAttribute="leading" secondItem="ZkF-F3-7GQ" secondAttribute="leading" id="xka-KH-WAB"/>
+                            <constraint firstItem="M1v-FF-SYp" firstAttribute="bottom" secondItem="Iei-mJ-J2Z" secondAttribute="bottom" id="Cfs-df-22T"/>
+                            <constraint firstItem="M1v-FF-SYp" firstAttribute="trailing" secondItem="Iei-mJ-J2Z" secondAttribute="trailing" id="JFV-Gk-0r0"/>
+                            <constraint firstItem="Iei-mJ-J2Z" firstAttribute="top" secondItem="M1v-FF-SYp" secondAttribute="top" id="YoZ-Uu-jQZ"/>
+                            <constraint firstItem="Iei-mJ-J2Z" firstAttribute="leading" secondItem="M1v-FF-SYp" secondAttribute="leading" id="uiW-sC-Owz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZkF-F3-7GQ"/>
+                        <viewLayoutGuide key="safeArea" id="M1v-FF-SYp"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Cna-RR-fxe" id="Hxd-7E-db8"/>
+                        <outlet property="tableView" destination="Iei-mJ-J2Z" id="n4M-hK-EMi"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j66-Tr-ZMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WH0-RR-STl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="119"/>
+            <point key="canvasLocation" x="1866.6666666666667" y="119.86607142857142"/>
         </scene>
         <!--Add Student View Controller-->
-        <scene sceneID="33e-W7-Oa9">
+        <scene sceneID="b1F-tX-x65">
             <objects>
-                <viewController storyboardIdentifier="AddFirstYearStudentViewController" id="1Lu-Pb-hS6" customClass="AddStudentViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uKn-6w-nUA">
+                <viewController storyboardIdentifier="AddStudentViewController" id="Bfv-tL-gRv" customClass="AddStudentViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xLO-vq-Khz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTW-nX-X2K">
-                                <rect key="frame" x="20" y="242" width="374" height="34"/>
+                                <rect key="frame" x="20" y="257" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Department" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rmx-jH-nme">
-                                <rect key="frame" x="20" y="284" width="374" height="34"/>
+                                <rect key="frame" x="20" y="299.5" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-cv-efH">
-                                <rect key="frame" x="20" y="326" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Session" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-cv-efH">
+                                <rect key="frame" x="20" y="341.5" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2G-Dz-Pd4">
-                                <rect key="frame" x="20" y="368" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T78-As-cGz">
+                                <rect key="frame" x="20" y="425.5" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T78-As-cGz">
-                                <rect key="frame" x="20" y="410" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2aq-AC-qwb">
+                                <rect key="frame" x="20" y="467.5" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PnT-Py-40T">
-                                <rect key="frame" x="169" y="144.5" width="76" height="62"/>
+                                <rect key="frame" x="169" y="159.5" width="76" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-a2-rkx">
-                                <rect key="frame" x="29" y="495" width="365" height="30"/>
+                                <rect key="frame" x="20" y="541.5" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -166,25 +233,32 @@
                                     <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="fSaveAction:" destination="1Lu-Pb-hS6" eventType="touchUpInside" id="qzf-vi-GYX"/>
+                                    <action selector="studentSaveAction:" destination="Bfv-tL-gRv" eventType="touchUpInside" id="jhf-mv-U8o"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2G-Dz-Pd4">
+                                <rect key="frame" x="20" y="383" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="OzC-0N-01N"/>
+                        <viewLayoutGuide key="safeArea" id="qJv-77-ifK"/>
                     </view>
                     <connections>
-                        <outlet property="fCityTxt" destination="mz8-cv-efH" id="PSQ-H8-Ikb"/>
-                        <outlet property="fDeptTxt" destination="Rmx-jH-nme" id="42t-DZ-KmN"/>
-                        <outlet property="fEmailTxt" destination="A2G-Dz-Pd4" id="af0-BY-hF4"/>
-                        <outlet property="fMobileTxt" destination="T78-As-cGz" id="2AR-JO-yJl"/>
-                        <outlet property="fNametxt" destination="uTW-nX-X2K" id="VwV-48-okz"/>
-                        <outlet property="fimg" destination="PnT-Py-40T" id="Q22-iT-EEP"/>
+                        <outlet property="studentDept" destination="Rmx-jH-nme" id="DZ0-rY-faV"/>
+                        <outlet property="studentEmail" destination="T78-As-cGz" id="9UN-7v-woK"/>
+                        <outlet property="studentImg" destination="PnT-Py-40T" id="Jtp-TD-Idt"/>
+                        <outlet property="studentName" destination="uTW-nX-X2K" id="gC4-RW-XWC"/>
+                        <outlet property="studentPhone" destination="2aq-AC-qwb" id="xkp-ef-W3h"/>
+                        <outlet property="studentSession" destination="mz8-cv-efH" id="MIg-eb-HRn"/>
+                        <outlet property="studentYear" destination="A2G-Dz-Pd4" id="vfo-DE-s3x"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oe5-Uy-d8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4H-e8-g9U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="119"/>
+            <point key="canvasLocation" x="2710" y="120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GXN-Og-FN4">

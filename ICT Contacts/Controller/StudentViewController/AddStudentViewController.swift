@@ -10,12 +10,36 @@ import UIKit
 
 class AddStudentViewController: UIViewController {
 
+    
+    @IBOutlet weak var studentImg: UIImageView!
+    
+    @IBOutlet weak var studentName: UITextField!
+    
+    @IBOutlet weak var studentDept: UITextField!
+    
+    @IBOutlet weak var studentSession: UITextField!
+    
+    @IBOutlet weak var studentYear: UITextField!
+    
+    @IBOutlet weak var studentEmail: UITextField!
+    
+    @IBOutlet weak var studentPhone: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
     
 
-
+    @IBAction func studentSaveAction(_ sender: UIButton) {
+        
+        
+    }
+    
+    
+    
+    
 }
