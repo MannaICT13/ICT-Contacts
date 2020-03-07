@@ -9,12 +9,13 @@
 import UIKit
 
 class StudentViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var student = [Student]()
     
-    
+  
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,9 @@ class StudentViewController: UIViewController {
     @objc func addStudent(_ sender : UIBarButtonItem){
         
         let addStudentVc = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
+        
         self.navigationController?.pushViewController(addStudentVc, animated: true)
+        
         
         
     }
@@ -100,6 +103,17 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         }
         
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, nil) in
+            
+
+          //  let studentDic = ["pngStudentImg":self.student[indexPath.row].img!,"studentName":self.student[indexPath.row].name! ,"studentDept":self.student[indexPath.row].dept! ,"studentSession":self.student[indexPath.row].session!,"studentYear":self.student[indexPath.row].year!,"studentEmail":self.student[indexPath.row].email! ,"studentPhone":self.student[indexPath.row].phone!] as [String : Any]
+           
+            
+          //  let addStudentVC = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
+         //   self.navigationController?.pushViewController(addStudentVC, animated: true)
+           // self.navigationController?.popViewController(animated: true)
+            
+            
+            
             
             
         }

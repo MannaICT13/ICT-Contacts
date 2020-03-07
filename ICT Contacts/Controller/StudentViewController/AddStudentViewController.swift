@@ -9,7 +9,8 @@
 import UIKit
 
 class AddStudentViewController: UIViewController {
-
+   
+  
     
     @IBOutlet weak var studentImg: UIImageView!
     
@@ -27,6 +28,8 @@ class AddStudentViewController: UIViewController {
     
     
     let imagePicker = UIImagePickerController()
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,23 +64,47 @@ class AddStudentViewController: UIViewController {
         
         let pngStudentImg = self.studentImg.image?.jpegData(compressionQuality: 0.20)
         //let pngStudentImg = self.studentImg.image?.pngData()
-        
-        
-        
-        
+
         let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName.text! ,"studentDept":studentDept.text! ,"studentSession":studentSession.text!,"studentYear":studentYear.text!,"studentEmail": studentEmail.text! ,"studentPhone":studentPhone.text!]
+       
+            StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
         
-        StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
+        self.navigationController?.popViewController(animated: true)
         
+           
+            
+        }
+    
+    
+      func passDataS(data: [String : Any]) {
+        
+        // studentImg.image = UIImage(data: data["pngStudentImg"] as! Data)
+        studentImg.image = data["pngStudentImg"] as? UIImage
+        studentName.text = data["studentName"] as? String
+        studentName.text = data["studentDept"] as? String
+        studentSession.text = data["studentSession"] as? String
+        studentYear.text = data["studentYear"] as? String
+        studentEmail.text = data["studentEmail"] as? String
+        studentPhone.text = data["studentPhone"] as? String
+        
+        
+        
+        
+        
+          
+      }
+      
+
+        
+       
+        
+      
         
         
     }
     
     
-    
-    
-    
-}
+
 extension AddStudentViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     
@@ -108,3 +135,5 @@ extension AddStudentViewController : UIImagePickerControllerDelegate,UINavigatio
     
     
 }
+
+
