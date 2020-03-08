@@ -9,7 +9,20 @@
 import UIKit
 
 class StudentDetailTableViewController: UITableViewController {
-
+    @IBOutlet weak var studentNameLbl: UILabel!
+    
+    @IBOutlet weak var studentDeptLbl: UILabel!
+    
+    @IBOutlet weak var studentSessionLbl: UILabel!
+    
+    @IBOutlet weak var studentYearLbl: UILabel!
+    
+    @IBOutlet weak var studentEmailLbl: UILabel!
+    
+    @IBOutlet weak var studentPhoneLbl: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
