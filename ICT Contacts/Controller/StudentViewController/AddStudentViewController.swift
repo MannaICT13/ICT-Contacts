@@ -75,33 +75,10 @@ class AddStudentViewController: UIViewController {
             
         }
     
-    
-      func passDataS(data: [String : Any]) {
-        
-        // studentImg.image = UIImage(data: data["pngStudentImg"] as! Data)
-        studentImg.image = data["pngStudentImg"] as? UIImage
-        studentName.text = data["studentName"] as? String
-        studentName.text = data["studentDept"] as? String
-        studentSession.text = data["studentSession"] as? String
-        studentYear.text = data["studentYear"] as? String
-        studentEmail.text = data["studentEmail"] as? String
-        studentPhone.text = data["studentPhone"] as? String
+ 
         
         
-        
-        
-        
-          
-      }
-      
-
-        
-       
-        
-      
-        
-        
-    }
+}
     
     
 

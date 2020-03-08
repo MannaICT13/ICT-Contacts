@@ -149,11 +149,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="studentCellDept" destination="vxE-XR-0t4" id="iiG-9n-vGL"/>
-                                            <outlet property="studentCellEmail" destination="3KX-hV-YgJ" id="kPO-px-VOz"/>
                                             <outlet property="studentCellImg" destination="UTa-Qk-BwK" id="Ht2-J3-Ex5"/>
-                                            <outlet property="studentCellPhone" destination="SNq-P3-Zed" id="7x9-Cw-F8S"/>
                                             <outlet property="studentCellSession" destination="Kgc-u6-Ejh" id="0bJ-Za-F7c"/>
-                                            <outlet property="studentCellYear" destination="hdp-Za-OHV" id="l2w-Y9-nrg"/>
                                             <outlet property="studetnCellName" destination="41r-1c-yuV" id="2IS-Rs-ZDK"/>
                                         </connections>
                                     </tableViewCell>
@@ -264,7 +261,7 @@
         <!--Student Detail Table View Controller-->
         <scene sceneID="I5I-Ig-LIG">
             <objects>
-                <tableViewController id="hOB-rJ-QJn" customClass="StudentDetailTableViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StudentDetailTableViewController" id="hOB-rJ-QJn" customClass="StudentDetailTableViewController" customModule="ICT_Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="P8K-bk-mTD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -73,12 +73,12 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         
         let cell : StudentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as! StudentTableViewCell
         cell.studentCellImg.image = UIImage(data: student[indexPath.row].img!)
-        cell.studetnCellName.text = student[indexPath.row].name
-        cell.studentCellDept.text = student[indexPath.row].dept
-        cell.studentCellSession.text = student[indexPath.row].session
-        cell.studentCellYear.text = student[indexPath.row].year
-        cell.studentCellEmail.text = student[indexPath.row].email
-        cell.studentCellPhone.text = student[indexPath.row].phone
+        cell.studetnCellName.text = student[indexPath.row].name!
+        cell.studentCellDept.text = student[indexPath.row].dept!
+        cell.studentCellSession.text = student[indexPath.row].session!
+       // cell.studentCellYear.text = student[indexPath.row].year
+   //     cell.studentCellEmail.text = student[indexPath.row].email
+     //   cell.studentCellPhone.text = student[indexPath.row].phone
         
         cell.backgroundColor = UIColor.black
         
@@ -123,6 +123,16 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         config.performsFirstActionWithFullSwipe = false
         
         return config
+        
+        
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let studentDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "StudentDetailTableViewController") as! StudentDetailTableViewController
+        self.navigationController?.pushViewController(studentDetailVC, animated: true)
         
         
         
