@@ -10,7 +10,10 @@ import UIKit
 
 class StudentViewController: UIViewController {
     
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    
     
     var student = [Student]()
     
@@ -22,8 +25,7 @@ class StudentViewController: UIViewController {
 
       
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
-        
-      // self.view.backgroundColor = UIColor.black
+
         
         self.student = StudentDatabaseHelper.studentInstance.getStudentData()
         
@@ -32,11 +34,7 @@ class StudentViewController: UIViewController {
         
     }
     
-     
-    
-    
-    
-    
+  
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -44,6 +42,8 @@ class StudentViewController: UIViewController {
            
        }
    
+    
+    
     
     @objc func addStudent(_ sender : UIBarButtonItem){
         
@@ -65,14 +65,19 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return student.count
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
@@ -91,6 +96,9 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view
@@ -99,10 +107,7 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
             self.student.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             StudentDatabaseHelper.studentInstance.deleteStudentData(index: indexPath.row)
-            
-            
-            
-    
+           
             
         }
 
@@ -115,6 +120,9 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         
         
     }
+    
+    
+    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -10,6 +10,7 @@ import UIKit
 
 class StudentDetailTableViewController: UITableViewController {
     
+    
     @IBOutlet weak var studentNameLbl: UILabel!
     
     @IBOutlet weak var studentDeptLbl: UILabel!
@@ -29,6 +30,8 @@ class StudentDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target:self, action: #selector(editStudentData(_ :)))
                      
 
     }
@@ -42,6 +45,21 @@ class StudentDetailTableViewController: UITableViewController {
                    studentEmailLbl.text = studentData?.email
                    studentPhoneLbl.text = studentData?.phone
     }
+    
+    
+    @objc func editStudentData( _ sender : UIBarButtonItem){
+        
+    
+               let addStudentVc = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
+                  
+        
+                addStudentVc.editStudentData = studentData
+               
+               self.navigationController?.pushViewController(addStudentVc, animated: true)
+        
+        
+    }
+    
 
   
 

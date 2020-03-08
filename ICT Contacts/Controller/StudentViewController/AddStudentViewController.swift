@@ -29,14 +29,31 @@ class AddStudentViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     
+    var editStudentData : Student?
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tapGesture()
+        
+        
+        
 
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+         studentImg.image = UIImage(data: editStudentData!.img!)
+         studentName.text = editStudentData?.name
+         studentDept.text = editStudentData?.dept
+         studentSession.text = editStudentData?.session
+         studentYear.text = editStudentData?.year
+         studentEmail.text = editStudentData?.email
+         studentPhone.text = editStudentData?.phone
+        
+        
     }
    
    

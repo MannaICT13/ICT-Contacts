@@ -11,13 +11,19 @@ import Foundation
 import CoreData
 
 class StudentDatabaseHelper: NSObject {
+    
+    
+    //create a singleton model
 
     static let studentInstance = StudentDatabaseHelper()
     
+    //create a context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     
+    
+    //save data to core data
     
     func saveStudentData(data : [String : Any]){
         
@@ -46,6 +52,11 @@ class StudentDatabaseHelper: NSObject {
         
         
     }
+    
+    
+    //get data from core data
+    
+    
     func getStudentData() -> [Student]{
         
         
@@ -66,6 +77,8 @@ class StudentDatabaseHelper: NSObject {
         
     }
     
+    
+    //delete data from core data 
     
     func deleteStudentData(index : Int){
         
