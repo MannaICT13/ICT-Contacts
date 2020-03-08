@@ -130,6 +130,7 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         let studentDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "StudentDetailTableViewController") as! StudentDetailTableViewController
         
         studentDetailVC.studentData = student[indexPath.row]
+        studentDetailVC.Rowindex = indexPath.row
     
         self.navigationController?.pushViewController(studentDetailVC, animated: true)
         

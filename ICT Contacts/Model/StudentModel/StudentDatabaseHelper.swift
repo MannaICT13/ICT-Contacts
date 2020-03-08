@@ -105,6 +105,37 @@ class StudentDatabaseHelper: NSObject {
     }
     
     
+    //update student data
+    
+    
+    
+    func updateStudentData(data : [String : Any],index : Int){
+        
+        let student = getStudentData()
+        
+        student[index].img = data["pngStudentImg"] as? Data
+        student[index].name = data["studentName"] as? String
+        student[index].dept = data["studentDept"] as? String
+        student[index].session = data["studentSession"] as? String
+        student[index].year = data["studentYear"] as? String
+        student[index].email = data["studentEmail"] as? String
+        student[index].phone = data["studentPhone"] as? String
+        
+        do{
+            try context.save()
+        }catch{
+            
+            print("Error in update ",error.localizedDescription)
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     
     
 }

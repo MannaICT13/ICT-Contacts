@@ -25,6 +25,8 @@ class StudentDetailTableViewController: UITableViewController {
     
     
     var studentData : Student?
+    
+    var Rowindex = Int()
  
   
     
@@ -38,10 +40,7 @@ class StudentDetailTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         
-        
-        
-        
-        
+    
                    studentNameLbl.text = studentData?.name
                    studentDeptLbl.text = studentData?.dept
                    studentSessionLbl.text  = studentData?.session
@@ -61,12 +60,12 @@ class StudentDetailTableViewController: UITableViewController {
     @objc func editStudentData( _ sender : UIBarButtonItem){
         
     
-               let addStudentVc = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
+               let editStudentVc = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
         
-                addStudentVc.editStudentData = studentData
-                addStudentVc.isUpdate = true
-        
-               self.navigationController?.pushViewController(addStudentVc, animated: true)
+                editStudentVc.editStudentData = studentData
+                editStudentVc.isUpdate = true
+                editStudentVc.Rowindex = Rowindex
+               self.navigationController?.pushViewController(editStudentVc, animated: true)
         
         
     }

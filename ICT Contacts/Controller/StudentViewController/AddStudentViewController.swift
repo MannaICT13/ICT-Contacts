@@ -34,7 +34,7 @@ class AddStudentViewController: UIViewController {
     var editStudentData : Student?
     
     var isUpdate : Bool = false
-    var index = Int()
+    var Rowindex = Int()
    
     
     
@@ -99,10 +99,26 @@ class AddStudentViewController: UIViewController {
         
         let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName.text! ,"studentDept":studentDept.text! ,"studentSession":studentSession.text!,"studentYear":studentYear.text!,"studentEmail": studentEmail.text! ,"studentPhone":studentPhone.text!]
        
-            StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
         
-        self.navigationController?.popViewController(animated: true)
         
+        
+        if isUpdate{
+            
+            
+            
+            
+            
+        }else{
+            
+
+                StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
+            
+               self.navigationController?.popViewController(animated: true)
+            
+            
+            
+            
+        }
            
             
         }
