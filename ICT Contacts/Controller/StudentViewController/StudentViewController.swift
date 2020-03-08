@@ -26,8 +26,13 @@ class StudentViewController: UIViewController {
       // self.view.backgroundColor = UIColor.black
         
         self.student = StudentDatabaseHelper.studentInstance.getStudentData()
+        
+        
+        
+        
     }
     
+     
     
     
     
@@ -65,20 +70,19 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 100
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         let cell : StudentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as! StudentTableViewCell
+        
         cell.studentCellImg.image = UIImage(data: student[indexPath.row].img!)
         cell.studetnCellName.text = student[indexPath.row].name!
         cell.studentCellDept.text = student[indexPath.row].dept!
         cell.studentCellSession.text = student[indexPath.row].session!
-       // cell.studentCellYear.text = student[indexPath.row].year
-   //     cell.studentCellEmail.text = student[indexPath.row].email
-     //   cell.studentCellPhone.text = student[indexPath.row].phone
+    
         
         cell.backgroundColor = UIColor.black
         
@@ -101,25 +105,9 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
     
             
         }
-        
-        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, nil) in
-            
 
-          //  let studentDic = ["pngStudentImg":self.student[indexPath.row].img!,"studentName":self.student[indexPath.row].name! ,"studentDept":self.student[indexPath.row].dept! ,"studentSession":self.student[indexPath.row].session!,"studentYear":self.student[indexPath.row].year!,"studentEmail":self.student[indexPath.row].email! ,"studentPhone":self.student[indexPath.row].phone!] as [String : Any]
-           
-            
-          //  let addStudentVC = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
-         //   self.navigationController?.pushViewController(addStudentVC, animated: true)
-           // self.navigationController?.popViewController(animated: true)
-            
-            
-            
-            
-            
-        }
         
-        
-        let config = UISwipeActionsConfiguration(actions: [delete,edit])
+        let config = UISwipeActionsConfiguration(actions: [delete])
         config.performsFirstActionWithFullSwipe = false
         
         return config
@@ -132,6 +120,9 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let studentDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "StudentDetailTableViewController") as! StudentDetailTableViewController
+        
+        studentDetailVC.studentData = student[indexPath.row]
+    
         self.navigationController?.pushViewController(studentDetailVC, animated: true)
         
         

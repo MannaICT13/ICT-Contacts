@@ -9,6 +9,7 @@
 import UIKit
 
 class StudentDetailTableViewController: UITableViewController {
+    
     @IBOutlet weak var studentNameLbl: UILabel!
     
     @IBOutlet weak var studentDeptLbl: UILabel!
@@ -22,12 +23,25 @@ class StudentDetailTableViewController: UITableViewController {
     @IBOutlet weak var studentPhoneLbl: UILabel!
     
     
+    var studentData : Student?
+     
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                     
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+                   studentNameLbl.text = studentData?.name
+                   studentDeptLbl.text = studentData?.dept
+                   studentSessionLbl.text  = studentData?.session
+                   studentYearLbl.text = studentData?.year
+                   studentEmailLbl.text = studentData?.email
+                   studentPhoneLbl.text = studentData?.phone
+    }
 
   
 

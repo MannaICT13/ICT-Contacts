@@ -18,24 +18,11 @@ class StudentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var studentCellSession: UILabel!
     
-    @IBOutlet weak var studentCellYear: UILabel!
-    
-    
-    @IBOutlet weak var studentCellEmail: UILabel!
-    
-    @IBOutlet weak var studentCellPhone: UILabel!
-    
-    
-    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        //studentCellYear.isHidden = true
-      //  studentCellEmail.isHidden = true
-       // studentCellPhone.isHidden = true
-        
+
        // circleImage()
         
        
@@ -44,14 +31,19 @@ class StudentTableViewCell: UITableViewCell {
     
     func circleImage(){
         
-        studentCellImg.layer.borderWidth = 1
-        studentCellImg.layer.masksToBounds = false
-        studentCellImg.layer.borderColor = UIColor.black.cgColor
-        studentCellImg.layer.cornerRadius = studentCellImg.frame.height/2
-        studentCellImg.clipsToBounds = true
+        studentCellImg!.layer.borderWidth = 1.0
+        studentCellImg!.layer.masksToBounds = false
+        studentCellImg!.layer.borderColor = UIColor.black.cgColor
+        studentCellImg!.layer.cornerRadius = studentCellImg.frame.height/2
+        studentCellImg!.clipsToBounds = true
         
         
     }
+  
+    
+    
+    
+    
 
 
 }
