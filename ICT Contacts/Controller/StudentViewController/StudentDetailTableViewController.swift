@@ -25,8 +25,8 @@ class StudentDetailTableViewController: UITableViewController {
     
     
     var studentData : Student?
-     
  
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +38,23 @@ class StudentDetailTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         
+        
+        
+        
+        
                    studentNameLbl.text = studentData?.name
                    studentDeptLbl.text = studentData?.dept
                    studentSessionLbl.text  = studentData?.session
                    studentYearLbl.text = studentData?.year
                    studentEmailLbl.text = studentData?.email
                    studentPhoneLbl.text = studentData?.phone
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -51,10 +62,10 @@ class StudentDetailTableViewController: UITableViewController {
         
     
                let addStudentVc = self.storyboard?.instantiateViewController(identifier: "AddStudentViewController") as! AddStudentViewController
-                  
         
                 addStudentVc.editStudentData = studentData
-               
+                addStudentVc.isUpdate = true
+        
                self.navigationController?.pushViewController(addStudentVc, animated: true)
         
         

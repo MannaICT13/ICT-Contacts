@@ -229,6 +229,7 @@
                         <outlet property="studentImg" destination="PnT-Py-40T" id="Jtp-TD-Idt"/>
                         <outlet property="studentName" destination="uTW-nX-X2K" id="gC4-RW-XWC"/>
                         <outlet property="studentPhone" destination="2aq-AC-qwb" id="xkp-ef-W3h"/>
+                        <outlet property="studentSaveOutlet" destination="NwI-a2-rkx" id="bAk-GC-3eu"/>
                         <outlet property="studentSession" destination="mz8-cv-efH" id="MIg-eb-HRn"/>
                         <outlet property="studentYear" destination="A2G-Dz-Pd4" id="vfo-DE-s3x"/>
                     </connections>

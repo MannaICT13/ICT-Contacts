@@ -12,6 +12,8 @@ class AddStudentViewController: UIViewController {
    
   
     
+    @IBOutlet weak var studentSaveOutlet: UIButton!
+    
     @IBOutlet weak var studentImg: UIImageView!
     
     @IBOutlet weak var studentName: UITextField!
@@ -30,13 +32,16 @@ class AddStudentViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     
     var editStudentData : Student?
+    
+    var isUpdate : Bool = false
+    var index = Int()
    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tapGesture()
-        
         
         
 
@@ -45,7 +50,16 @@ class AddStudentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-         studentImg.image = UIImage(data: editStudentData!.img!)
+        if isUpdate{
+            
+            studentSaveOutlet.setTitle("Update", for: .normal)
+        }else{
+            
+            studentSaveOutlet.setTitle("Save", for: .normal)
+        }
+        
+        
+         //studentImg.image = UIImage(data: (editStudentData?.img!)!)
          studentName.text = editStudentData?.name
          studentDept.text = editStudentData?.dept
          studentSession.text = editStudentData?.session
@@ -82,6 +96,7 @@ class AddStudentViewController: UIViewController {
         let pngStudentImg = self.studentImg.image?.jpegData(compressionQuality: 0.20)
         //let pngStudentImg = self.studentImg.image?.pngData()
 
+        
         let studentDic : [String : Any] = ["pngStudentImg":pngStudentImg!,"studentName":studentName.text! ,"studentDept":studentDept.text! ,"studentSession":studentSession.text!,"studentYear":studentYear.text!,"studentEmail": studentEmail.text! ,"studentPhone":studentPhone.text!]
        
             StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
