@@ -13,7 +13,15 @@ class TeacherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.black
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTeacher( _ : )))
+      
+    }
+    
+    @objc func addTeacher(_ sender : UIBarButtonItem){
+        
+        
+        
+        
     }
     
 

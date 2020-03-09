@@ -9,7 +9,15 @@
         <attribute name="session" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Teacher" representedClassName="Teacher" syncable="YES" codeGenerationType="class">
+        <attribute name="designation" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="Binary"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Student" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Teacher" positionX="-63" positionY="36" width="128" height="118"/>
     </elements>
 </model>
