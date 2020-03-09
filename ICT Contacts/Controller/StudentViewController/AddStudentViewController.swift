@@ -35,6 +35,10 @@ class AddStudentViewController: UIViewController {
     
     var isUpdate : Bool = false
     var Rowindex = Int()
+    
+    var yearPicker : String?
+    var yearList  = [String]()
+    
    
     
     
@@ -42,12 +46,20 @@ class AddStudentViewController: UIViewController {
         super.viewDidLoad()
         
         tapGesture()
+        yearList = ["First","Second","Third","Fourth","Fifth"]
         
         //self.navigationItem.hidesBackButton = true
+        createPickerView()
+        dismissPickerView()
         
 
        
     }
+    
+    
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -164,6 +176,72 @@ extension AddStudentViewController : UIImagePickerControllerDelegate,UINavigatio
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    
+    
+}
+
+extension AddStudentViewController : UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate{
+    
+    
+    func createPickerView(){
+        
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        studentYear.inputView = pickerView
+       
+        
+        
+        
+    }
+    
+    func dismissPickerView(){
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let button = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.action))
+        toolbar.setItems([button], animated: true)
+        toolbar.isUserInteractionEnabled = true
+        studentYear.inputAccessoryView = toolbar
+        
+        
+        
+    }
+    
+    @objc func action(){
+        
+        studentYear.endEditing(true)
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       
+        return yearList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+         return yearList[row]
+        
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        yearPicker = yearList[row]
+        studentYear.text = yearPicker
+        
+        
+    }
+    
     
     
     
