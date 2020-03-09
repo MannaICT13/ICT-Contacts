@@ -38,6 +38,8 @@ class AddStudentViewController: UIViewController {
     
     var yearPicker : String?
     var yearList  = [String]()
+    var sessionPicker : String?
+    var sessionList = [String]()
     
    
     
@@ -47,7 +49,7 @@ class AddStudentViewController: UIViewController {
         
         tapGesture()
         yearList = ["First","Second","Third","Fourth","Fifth"]
-        
+        sessionList = ["2016-2017","2017-2018","2018-2019","2019-20120","2020-2021",]
         //self.navigationItem.hidesBackButton = true
         createPickerView()
         dismissPickerView()
@@ -190,6 +192,7 @@ extension AddStudentViewController : UIPickerViewDelegate,UIPickerViewDataSource
         pickerView.delegate = self
         pickerView.dataSource = self
         studentYear.inputView = pickerView
+        studentSession.inputView = pickerView
        
         
         
@@ -205,6 +208,7 @@ extension AddStudentViewController : UIPickerViewDelegate,UIPickerViewDataSource
         toolbar.setItems([button], animated: true)
         toolbar.isUserInteractionEnabled = true
         studentYear.inputAccessoryView = toolbar
+        studentSession.inputAccessoryView = toolbar
         
         
         
@@ -213,6 +217,7 @@ extension AddStudentViewController : UIPickerViewDelegate,UIPickerViewDataSource
     @objc func action(){
         
         studentYear.endEditing(true)
+        studentSession.endEditing(true)
         
     }
     
@@ -224,20 +229,51 @@ extension AddStudentViewController : UIPickerViewDelegate,UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        
-        return yearList.count
+        if studentSession.isFirstResponder{
+            return sessionList.count
+        }
+        else if studentYear.isFirstResponder{
+           return  yearList.count
+        }
+        return 0
+       
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-         return yearList[row]
+        if studentSession.isFirstResponder{
+            
+            return sessionList[row]
+            
+        }else if studentYear.isFirstResponder{
+            
+            return yearList[row]
+        }
+        return nil
+        
         
         
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        yearPicker = yearList[row]
-        studentYear.text = yearPicker
+      //  yearPicker = yearList[row]
+      //  sessionPicker = sessionList[row]
+        //studentYear.text = yearPicker
+       // studentSession.text = sessionPicker
+        
+        if studentSession.isFirstResponder{
+            
+            let sessionSelect  = sessionList[row]
+            studentSession.text = sessionSelect
+            
+        }else if studentYear.isFirstResponder {
+            
+            let yearSeletct = yearList[row]
+            studentYear.text = yearSeletct
+            
+        }
         
         
     }
