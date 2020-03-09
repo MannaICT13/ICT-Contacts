@@ -49,6 +49,7 @@
                                 </state>
                                 <connections>
                                     <action selector="teacherBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aF7-b3-LfL"/>
+                                    <segue destination="x9m-TY-VdV" kind="show" identifier="teacherVC" id="GZa-gT-J5H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKy-g6-Oug">
@@ -78,6 +79,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="43" y="-585"/>
+        </scene>
+        <!--TeacherViewController-->
+        <scene sceneID="5kX-M6-FTZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TeacherViewController" storyboardName="Main" referencedIdentifier="TeacherViewController" id="x9m-TY-VdV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="17R-5m-8Rg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccE-E3-cpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15" y="-181"/>
         </scene>
         <!--Student View Controller-->
         <scene sceneID="lhq-sQ-KjK">
