@@ -8,9 +8,41 @@
 
 import UIKit
 
+import CoreData
+
 class TeacherDatabaseHelper: NSObject {
     
-    static let teacherInstance = TeacherViewController()
+    
+    
+    static let teacherInstance = TeacherDatabaseHelper()
+    
+    
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    
+    
+   func saveTeacherData(obj : [String : Any]){
+        
+        let teacher = NSEntityDescription.insertNewObject(forEntityName: "Teacher", into: context) as! Teacher
+        
+        teacher.img =  obj["teacherImg"] as? Data
+        teacher.name = obj["teacherName"] as? String
+        teacher.email = obj["teacherEmail"] as? String
+        teacher.phone = obj["teacherPhone"] as? String
+        
+        do{
+            try context.save()
+            
+        }catch{
+            
+            print("Error in Teacher save data",error.localizedDescription)
+            
+        }
+   
+        
+        
+    }
     
     
     

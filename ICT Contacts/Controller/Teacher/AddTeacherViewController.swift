@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class AddTeacherViewController: UIViewController {
+    
+    
     @IBOutlet weak var teacherImg: UIImageView!
     
     @IBOutlet weak var teacherName: UITextField!
@@ -18,7 +21,14 @@ class AddTeacherViewController: UIViewController {
     @IBOutlet weak var teacherEmail: UITextField!
     
     @IBOutlet weak var teacherPhone: UITextField!
+    
+    
+    
+    
     @IBOutlet weak var teacherSaveBtnOutlet: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +36,19 @@ class AddTeacherViewController: UIViewController {
     }
     
     @IBAction func teacherSaveBtnAction(_ sender: Any) {
+        
+        
+        let teacherJpgImg = teacherImg.image?.jpegData(compressionQuality: 0.20)
+        let _ = teacherImg.image?.pngData()
+        
+        
+        
+        let teacherDic : [String : Any] = ["teacherImg":teacherJpgImg! ,"teacherName":teacherName.text!,"teacherEmail":teacherEmail.text!,"teacherPhone":teacherPhone.text!]
+       
+       TeacherDatabaseHelper.teacherInstance.saveTeacherData(obj: teacherDic)
+        
+        
+        
     }
     
 

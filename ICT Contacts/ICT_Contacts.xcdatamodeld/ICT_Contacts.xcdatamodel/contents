@@ -13,8 +13,8 @@
         <attribute name="designation" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="img" optional="YES" attributeType="Binary"/>
-        <attribute name="mobile" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Student" positionX="-63" positionY="-18" width="128" height="148"/>

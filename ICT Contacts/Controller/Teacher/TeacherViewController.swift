@@ -19,6 +19,8 @@ class TeacherViewController: UIViewController {
     
     @objc func addTeacher(_ sender : UIBarButtonItem){
         
+        let addVC = self.storyboard?.instantiateViewController(identifier: "AddTeacherViewController") as! AddTeacherViewController
+        self.navigationController?.pushViewController(addVC, animated: true)
         
         
         
