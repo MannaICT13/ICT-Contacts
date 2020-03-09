@@ -27,7 +27,7 @@ class StudentViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
 
         
-        self.student = StudentDatabaseHelper.studentInstance.getStudentData()
+        student = StudentDatabaseHelper.studentInstance.getStudentData()
         
         
         
@@ -37,11 +37,11 @@ class StudentViewController: UIViewController {
   
     
     override func viewWillAppear(_ animated: Bool) {
-        
-       self.student = StudentDatabaseHelper.studentInstance.getStudentData()
+      
+       student = StudentDatabaseHelper.studentInstance.getStudentData()
+       tableView.reloadData()
            
        }
-   
     
     
     
@@ -88,8 +88,8 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         cell.studentCellDept.text = student[indexPath.row].dept!
         cell.studentCellSession.text = student[indexPath.row].session!
     
+       // cell.backgroundColor = UIColor.black
         
-        cell.backgroundColor = UIColor.black
         
         
         return cell

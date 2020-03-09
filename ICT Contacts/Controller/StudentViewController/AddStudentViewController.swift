@@ -43,6 +43,7 @@ class AddStudentViewController: UIViewController {
         
         tapGesture()
         
+        //self.navigationItem.hidesBackButton = true
         
 
        
@@ -104,16 +105,23 @@ class AddStudentViewController: UIViewController {
         
         if isUpdate{
             
+            StudentDatabaseHelper.studentInstance.updateStudentData(data: studentDic, index: Rowindex)
             
-            
+            self.navigationController?.popViewController(animated: true)
+          
             
             
         }else{
             
 
                 StudentDatabaseHelper.studentInstance.saveStudentData(data: studentDic)
+              
+                self.navigationController?.popViewController(animated: true)
+        
+         
             
-               self.navigationController?.popViewController(animated: true)
+                
+            
             
             
             
