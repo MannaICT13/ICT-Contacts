@@ -44,6 +44,26 @@ class TeacherDatabaseHelper: NSObject {
         
     }
     
+    func retriveTeacherData() -> [Teacher]{
+    
+        var teacher = [Teacher]()
+        
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Teacher")
+        
+        do{
+            teacher = try context.fetch(fetch) as! [Teacher]
+        }catch{
+            
+            print("Error in retrive teacher data",error.localizedDescription)
+        }
+        
+    
+    
+    
+    
+        return teacher
+    }
+    
     
     
     
