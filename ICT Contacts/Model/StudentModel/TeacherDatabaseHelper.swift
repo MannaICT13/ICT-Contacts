@@ -28,6 +28,7 @@ class TeacherDatabaseHelper: NSObject {
         
         teacher.img =  obj["teacherImg"] as? Data
         teacher.name = obj["teacherName"] as? String
+        teacher.designation = obj["teacherDesignation"] as? String
         teacher.email = obj["teacherEmail"] as? String
         teacher.phone = obj["teacherPhone"] as? String
         

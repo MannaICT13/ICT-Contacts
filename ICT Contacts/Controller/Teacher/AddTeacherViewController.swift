@@ -43,9 +43,10 @@ class AddTeacherViewController: UIViewController {
         
         
         
-        let teacherDic : [String : Any] = ["teacherImg":teacherJpgImg! ,"teacherName":teacherName.text!,"teacherEmail":teacherEmail.text!,"teacherPhone":teacherPhone.text!]
+        let teacherDic : [String : Any] = ["teacherImg":teacherJpgImg! ,"teacherName":teacherName.text!,"teacherDesignation":teacherDesignation.text!,"teacherEmail":teacherEmail.text!,"teacherPhone":teacherPhone.text!]
        
        TeacherDatabaseHelper.teacherInstance.saveTeacherData(obj: teacherDic)
+        self.navigationController?.popViewController(animated: true)
         
         
         
