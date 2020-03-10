@@ -89,6 +89,27 @@ class TeacherDatabaseHelper: NSObject {
         
     }
     
+    func updateTeacherData(data : [String:Any],index : Int){
+        
+        let teacher = retriveTeacherData()
+        
+        teacher[index].img = data["teacherImg"] as? Data
+        teacher[index].name = data["teacherName"] as? String
+        teacher[index].designation = data["teacherDesignation"] as? String
+        teacher[index].email = data["teacherEmail"] as? String
+        teacher[index].phone = data["teacherPhone"] as? String
+        
+        do{
+            try context.save()
+        }catch{
+            
+            print("Error in update teacher data",error.localizedDescription)
+        }
+        
+        
+        
+        
+    }
     
     
     

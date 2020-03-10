@@ -35,16 +35,41 @@ class AddTeacherViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     
+    var editTeacherDetail : Teacher?
+    
+    var isUpdate : Bool = false
+    var rowIndex = Int()
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-         designationList = ["Lecturer","Assistant Professor","Associate Professo","Professor"]
+         designationList = ["Lecturer","Assistant Professor","Associate Professor","Professor"]
          createPickerView()
          dismissPickerView()
-        tapGeture()
-         
+         tapGeture()
+        
+                  teacherName.text = editTeacherDetail?.name
+                  teacherDesignation.text = editTeacherDetail?.designation
+                  teacherEmail.text = editTeacherDetail?.email
+                  teacherPhone.text = editTeacherDetail?.phone
+        
+        if isUpdate{
+            teacherSaveBtnOutlet.setTitle("Update", for: .normal)
+            
+        }else{
+            
+            teacherSaveBtnOutlet.setTitle("Save", for: .normal)
+        }
+        
+        
+        
         
     }
     
@@ -57,10 +82,23 @@ class AddTeacherViewController: UIViewController {
         
         
         let teacherDic : [String : Any] = ["teacherImg":teacherJpgImg! ,"teacherName":teacherName.text!,"teacherDesignation":teacherDesignation.text!,"teacherEmail":teacherEmail.text!,"teacherPhone":teacherPhone.text!]
-       
-       TeacherDatabaseHelper.teacherInstance.saveTeacherData(obj: teacherDic)
-        self.navigationController?.popViewController(animated: true)
         
+        if isUpdate{
+            
+            TeacherDatabaseHelper.teacherInstance.updateTeacherData(data: teacherDic, index: rowIndex)
+            self.navigationController?.popViewController(animated: true)
+            
+            
+        }else{
+        
+               TeacherDatabaseHelper.teacherInstance.saveTeacherData(obj: teacherDic)
+            
+                self.navigationController?.popViewController(animated: true)
+                
+        }
+        
+        
+    
         
         
     }
