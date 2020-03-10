@@ -31,11 +31,12 @@ class StudentTableViewCell: UITableViewCell {
     
     func circleImage(){
         
-        studentCellImg!.layer.borderWidth = 1.0
-        studentCellImg!.layer.masksToBounds = false
-        studentCellImg!.layer.borderColor = UIColor.black.cgColor
-        studentCellImg!.layer.cornerRadius = studentCellImg.frame.height/2
-        studentCellImg!.clipsToBounds = true
+        studentCellImg.layer.borderWidth = 1.0
+        studentCellImg.layer.masksToBounds = false
+        studentCellImg.layer.borderColor = UIColor.black.cgColor
+        studentCellImg.layer.cornerRadius = studentCellImg.frame.height/2
+        studentCellImg.clipsToBounds = true
+
         
         
     }
