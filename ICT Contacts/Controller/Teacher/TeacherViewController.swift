@@ -88,7 +88,20 @@ extension TeacherViewController : UITableViewDataSource,UITableViewDelegate{
         return config
         
         
+    
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        let teacherDetailVC = self.storyboard?.instantiateViewController(identifier: "TeacherDetailTableViewController") as! TeacherDetailTableViewController
+        
+         teacherDetailVC.teacherDetail = teacher[indexPath.row]
+        
+        self.navigationController?.pushViewController(teacherDetailVC, animated: true)
+        
+    }
+    
+    
     
     
     
