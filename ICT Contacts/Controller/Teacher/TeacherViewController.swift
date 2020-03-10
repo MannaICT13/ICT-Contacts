@@ -30,9 +30,9 @@ class TeacherViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+       
           teacher = TeacherDatabaseHelper.teacherInstance.retriveTeacherData()
-        
+          tableView.reloadData()
     }
     
     @objc func addTeacher(_ sender : UIBarButtonItem){

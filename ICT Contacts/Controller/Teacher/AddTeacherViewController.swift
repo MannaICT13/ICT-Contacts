@@ -33,6 +33,9 @@ class AddTeacherViewController: UIViewController {
     
     var designationList = [String]()
     
+    let imagePicker = UIImagePickerController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +43,8 @@ class AddTeacherViewController: UIViewController {
          designationList = ["Lecturer","Assistant Professor","Associate Professo","Professor"]
          createPickerView()
          dismissPickerView()
+        tapGeture()
+         
         
     }
     
@@ -59,6 +64,24 @@ class AddTeacherViewController: UIViewController {
         
         
     }
+    
+    
+    func tapGeture(){
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openImage( _ :)))
+        tapGesture.numberOfTapsRequired = 1
+        teacherImg.isUserInteractionEnabled = true
+        teacherImg.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    @objc func openImage ( _ sender : UITapGestureRecognizer){
+    
+        openImagePicker()
+    
+    }
+    
+    
     
 
 }
@@ -116,6 +139,48 @@ extension AddTeacherViewController : UIPickerViewDelegate,UIPickerViewDataSource
         }
         
     }
+    
+    
+    
+}
+
+extension AddTeacherViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    
+    @objc func openImagePicker(){
+        
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .savedPhotosAlbum
+        
+        self.present(imagePicker, animated: true, completion: nil)
+        
+       
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let img = info[.originalImage] as? UIImage{
+            
+            self.teacherImg.image = img
+            teacherImg.contentMode = .scaleAspectFill
+            teacherImg.backgroundColor = UIColor.clear
+            
+       
+}
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     
