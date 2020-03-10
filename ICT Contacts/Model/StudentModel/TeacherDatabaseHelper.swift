@@ -65,6 +65,32 @@ class TeacherDatabaseHelper: NSObject {
         return teacher
     }
     
+    func daleteTeacherData(index : Int){
+        
+        
+        var teacher = retriveTeacherData()
+        
+        let deleteObj = teacher.remove(at: index) as NSManagedObject
+        
+        context.delete(deleteObj)
+        
+        
+        do{
+            try context.save()
+        }catch{
+            
+            print("Faild to delete data From Teacher database",error.localizedDescription)
+            
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     
     
     
