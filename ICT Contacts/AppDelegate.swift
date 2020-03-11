@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Document Path : ",
               FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found")
         
+        UINavigationBar.appearance().tintColor = UIColor.black
         
 
         

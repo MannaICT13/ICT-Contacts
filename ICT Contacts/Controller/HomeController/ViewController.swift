@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         aboutBtn.layer.cornerRadius = 10
         
        
+        
+       
     }
 
     @IBAction func studentBtnAction(_ sender: UIButton) {
@@ -49,9 +51,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func officeStaffBtnAction(_ sender: UIButton) {
+        
     }
     
     @IBAction func aboutBtnAction(_ sender: UIButton) {
+        
     }
 }
 
