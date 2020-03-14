@@ -26,6 +26,7 @@ class StudentViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
 
+        
         loadStudentData()
       
         createSearchBar()
