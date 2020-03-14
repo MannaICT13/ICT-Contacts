@@ -16,22 +16,27 @@ class StudentViewController: UIViewController {
     
     
     var student = [Student]()
+    let searchController = UISearchController(searchResultsController: nil)
     
-  
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addStudent(_ : )))
 
+        loadStudentData()
+      
+        createSearchBar()
         
-        student = StudentDatabaseHelper.studentInstance.getStudentData()
         
         
         
+    }
+    private func loadStudentData(){
         
+          student = StudentDatabaseHelper.studentInstance.getStudentData()
     }
     
   
@@ -133,6 +138,55 @@ extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
         studentDetailVC.Rowindex = indexPath.row
     
         self.navigationController?.pushViewController(studentDetailVC, animated: true)
+        
+        
+        
+    }
+    
+}
+
+extension StudentViewController : UISearchBarDelegate,UISearchControllerDelegate,UISearchResultsUpdating{
+    
+    
+    func createSearchBar(){
+        
+        
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let searchText = searchController.searchBar.text else {return}
+    
+        if searchText == ""{
+            
+          
+             loadStudentData()
+            
+        }else{
+            
+             loadStudentData()
+            
+            student = student.filter({
+                
+                           
+                    $0.name!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.dept!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.session!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.year!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.email!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.phone!.localizedCaseInsensitiveContains(searchText)
+                   
+            })
+                                   
+        }
+        
+        tableView.reloadData()
+        
         
         
         
