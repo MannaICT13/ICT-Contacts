@@ -69,8 +69,34 @@ class StudentDetailTableViewController: UITableViewController {
         
         
     }
+   
+
+}
+extension StudentDetailTableViewController{
     
-
-  
-
+ 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 5{
+            
+            let alertController = UIAlertController(title: "Alert information", message: "You want to communicate?", preferredStyle: .actionSheet)
+            
+            let call = UIAlertAction(title: "Call", style: .default) { (callAction) in
+                print("Calling....")
+            }
+            alertController.addAction(call)
+            let sms = UIAlertAction(title: "Sms", style: .default) { (smsAction) in
+                print("Sms sending.....")
+            }
+            alertController.addAction(sms)
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancel)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+           
+        }
+    }
+    
 }
