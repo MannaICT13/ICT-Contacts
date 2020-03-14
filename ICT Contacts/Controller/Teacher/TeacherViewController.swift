@@ -18,14 +18,16 @@ class TeacherViewController: UIViewController {
     
     
     
-    
+    let searchController = UISearchController(searchResultsController: nil)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTeacher( _ : )))
-        teacher = TeacherDatabaseHelper.teacherInstance.retriveTeacherData()
+         loadTeaherData()
+         createTeacherSearchBar()
+      
       
     }
     
@@ -43,6 +45,14 @@ class TeacherViewController: UIViewController {
         
         
     }
+    
+    func loadTeaherData(){
+        
+          teacher = TeacherDatabaseHelper.teacherInstance.retriveTeacherData()
+        
+    }
+    
+    
     
 
 }
@@ -103,13 +113,45 @@ extension TeacherViewController : UITableViewDataSource,UITableViewDelegate{
     }
     
     
+}
+
+extension TeacherViewController : UISearchBarDelegate,UISearchControllerDelegate,UISearchResultsUpdating{
     
+    func createTeacherSearchBar(){
+        
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        
+    }
     
-    
-    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let searchText =  searchController.searchBar.text else {return}
+        
+        if searchText == ""{
+            
+            loadTeaherData()
+            
+        }else{
+              loadTeaherData()
+              teacher = teacher.filter({
+                
+                    $0.name!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.designation!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.email!.localizedCaseInsensitiveContains(searchText) ||
+                    $0.phone!.localizedCaseInsensitiveContains(searchText)
+            })
+          
+            
+            
+        }
+        
+        tableView.reloadData()
+    }
     
     
     
 }
-
 
