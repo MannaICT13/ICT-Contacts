@@ -24,6 +24,7 @@ class TeacherDetailTableViewController: UITableViewController {
     var rowIndex = Int()
     
     let mailController = MFMailComposeViewController()
+    let msgController = MFMessageComposeViewController()
     
     
     
@@ -169,7 +170,20 @@ extension TeacherDetailTableViewController : MFMessageComposeViewControllerDeleg
         
         
     }
-    
+    private func teacherSmsSetup(){
+        
+        if MFMessageComposeViewController.canSendText(){
+          
+            msgController.messageComposeDelegate  = self
+            msgController.recipients = [teacherDetailPhoneLbl.text!]
+           // msgController.body
+            self.present(msgController, animated: true, completion: nil)
+            
+            
+        }
+        
+        
+    }
     
     
     
@@ -179,6 +193,17 @@ extension TeacherDetailTableViewController : MFMessageComposeViewControllerDeleg
     
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+        switch result {
+        case .sent:
+            print("sent")
+        case .failed :
+            print("failed")
+        case .cancelled :
+            print("canceled")
+        default:
+            fatalError()
+        }
         
     }
     
