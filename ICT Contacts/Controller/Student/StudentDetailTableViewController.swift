@@ -29,6 +29,7 @@ class StudentDetailTableViewController: UITableViewController {
     var Rowindex = Int()
  
     let mailController = MFMailComposeViewController()
+    let msgController = MFMessageComposeViewController()
   
     
     override func viewDidLoad() {
@@ -103,6 +104,7 @@ extension StudentDetailTableViewController{
             
             let call = UIAlertAction(title: "Call", style: .default) { (callAction) in
                 print("Calling....")
+                self.studentCalling()
             }
             alertController.addAction(call)
             let sms = UIAlertAction(title: "Sms", style: .default) { (smsAction) in
@@ -165,8 +167,54 @@ extension StudentDetailTableViewController : MFMailComposeViewControllerDelegate
     
     
     
+}
+
+
+extension StudentDetailTableViewController : MFMessageComposeViewControllerDelegate{
     
     
+    
+    private func studentCalling(){
+        
+        
+        if let callingUrl = NSURL(string: "TEL://\(studentPhoneLbl.text!)") {
+            UIApplication.shared.open(callingUrl as URL, options: [:], completionHandler: nil)
+              
+        }
+    }
+        
+        private func studentMessage(){
+            
+            if  MFMessageComposeViewController.canSendText() {
+                
+                msgController.messageComposeDelegate = self
+                msgController.recipients = [studentPhoneLbl.text!]
+               // msgController.body
+                self.present(msgController, animated: true, completion: nil)
+            
+            
+            }
+            
+        }
+    
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+        switch result {
+            
+        case .sent:
+            print("successfully send msg")
+        case .failed :
+            print("Faild")
+        case .cancelled:
+            print("Canceled")
+        default:
+            fatalError()
+        }
+        
+    }
+        
+           
     
     
 }
