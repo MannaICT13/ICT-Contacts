@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MessageUI
 class StudentDetailTableViewController: UITableViewController {
     
     
@@ -76,6 +76,23 @@ extension StudentDetailTableViewController{
     
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        if indexPath.row == 4{
+            
+            let alertController = UIAlertController(title: "Alert Information", message: "You want to send a mail?", preferredStyle: .actionSheet)
+            let mail = UIAlertAction(title: "Send Mail", style: .default) { (mailAction) in
+                print("Mail Sending")
+            }
+            alertController.addAction(mail)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancel)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+            
+            
+        }
         
         if indexPath.row == 5{
             
@@ -98,5 +115,16 @@ extension StudentDetailTableViewController{
            
         }
     }
+    
+}
+
+extension StudentDetailTableViewController{
+    
+    
+    
+    
+    
+    
+    
     
 }
