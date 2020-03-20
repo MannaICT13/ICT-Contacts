@@ -28,6 +28,7 @@ class StudentDetailTableViewController: UITableViewController {
     
     var Rowindex = Int()
  
+    let mailController = MFMailComposeViewController()
   
     
     override func viewDidLoad() {
@@ -81,9 +82,11 @@ extension StudentDetailTableViewController{
             
             let alertController = UIAlertController(title: "Alert Information", message: "You want to send a mail?", preferredStyle: .actionSheet)
             let mail = UIAlertAction(title: "Send Mail", style: .default) { (mailAction) in
-                print("Mail Sending")
+                print("Sending mail........")
+                self.createMailCompose()
             }
             alertController.addAction(mail)
+            
             let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alertController.addAction(cancel)
             
@@ -118,8 +121,47 @@ extension StudentDetailTableViewController{
     
 }
 
-extension StudentDetailTableViewController{
+extension StudentDetailTableViewController : MFMailComposeViewControllerDelegate{
+
     
+    
+    func createMailCompose(){
+        
+        guard  MFMailComposeViewController.canSendMail() else {return}
+      
+        mailController.mailComposeDelegate = self
+        mailController.setToRecipients([studentEmailLbl.text!])
+      //  mailController.setCcRecipients(<#T##ccRecipients: [String]?##[String]?#>)
+      //  mailController.setSubject(<#T##subject: String##String#>)
+       // mailController.setMessageBody(<#T##body: String##String#>, isHTML: <#T##Bool#>)
+        
+        self.present(mailController, animated: true, completion: nil)
+        
+    }
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if let _ = error{
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        switch result {
+        case .sent:
+            print("Successfully sent")
+        case .saved:
+            print("Successfully saved")
+        case .failed:
+            print("Failed")
+        case .cancelled:
+            print("Canceled")
+            
+        default:
+            fatalError()
+        }
+      
+    }
     
     
     
