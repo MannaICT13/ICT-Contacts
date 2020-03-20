@@ -154,3 +154,32 @@ extension TeacherDetailTableViewController  : MFMailComposeViewControllerDelegat
     
     
 }
+extension TeacherDetailTableViewController : MFMessageComposeViewControllerDelegate{
+    
+    
+    private func teacherCallSetUp() {
+        
+        
+        guard let callingUrl = NSURL(string: "TEL://\(teacherDetailPhoneLbl.text!)") else {
+            return
+        }
+        
+        UIApplication.shared.open(callingUrl as URL, options: [:], completionHandler: nil)
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+    }
+    
+}
