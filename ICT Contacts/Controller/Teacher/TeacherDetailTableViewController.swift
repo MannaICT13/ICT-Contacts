@@ -84,6 +84,38 @@ class TeacherDetailTableViewController: UITableViewController {
             
             
         }
+        
+        
+        
+        if indexPath.row == 3 {
+            
+            let alertController = UIAlertController(title: "Alert Information!", message: "You want to send Message or call?", preferredStyle: .actionSheet)
+            
+            let call = UIAlertAction(title: "Call", style: .default) { (callAction) in
+                print("Calling.....")
+                self.teacherCallSetUp()
+                
+            }
+            
+            alertController.addAction(call)
+            
+            
+            let sendSMS = UIAlertAction(title: "Send Message", style: .default) { (smsAction) in
+                
+                print("sms sending.....")
+                
+                self.teacherSmsSetup()
+            }
+            alertController.addAction(sendSMS)
+            
+       
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(cancel)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
     }
     
 
@@ -161,11 +193,12 @@ extension TeacherDetailTableViewController : MFMessageComposeViewControllerDeleg
     private func teacherCallSetUp() {
         
         
-        guard let callingUrl = NSURL(string: "TEL://\(teacherDetailPhoneLbl.text!)") else {
-            return
+        if let  callingUrl = NSURL(string: "TEL://\(teacherDetailPhoneLbl.text!)") {
+            
+            UIApplication.shared.open(callingUrl as URL, options: [:], completionHandler: nil)
         }
         
-        UIApplication.shared.open(callingUrl as URL, options: [:], completionHandler: nil)
+        
         
         
         
