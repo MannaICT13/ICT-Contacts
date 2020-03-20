@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MessageUI
 class TeacherDetailTableViewController: UITableViewController {
     
 
@@ -22,6 +22,11 @@ class TeacherDetailTableViewController: UITableViewController {
     
     var teacherDetail : Teacher?
     var rowIndex = Int()
+    
+    let mailController = MFMailComposeViewController()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +62,95 @@ class TeacherDetailTableViewController: UITableViewController {
         
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 2 {
+            
+            let alertController = UIAlertController(title: "Alert Information!", message: "You want to send mail?", preferredStyle: .actionSheet)
+            let sendMail = UIAlertAction(title: "Send Mail", style: .default) { (mailAction) in
+                
+                print("Mail Sending......")
+                self.createMailCompose()
+            }
+            
+            alertController.addAction(sendMail)
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancel)
+            
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+        }
+    }
     
 
 
+}
+
+extension TeacherDetailTableViewController  : MFMailComposeViewControllerDelegate {
+    
+    
+    
+    private func createMailCompose(){
+        
+        if MFMailComposeViewController.canSendMail(){
+            
+             mailController.mailComposeDelegate = self
+             mailController.setToRecipients([teacherDetailEmailLbl.text!])
+             //mailController.setCcRecipients(<#T##ccRecipients: [String]?##[String]?#>)
+             //mailController.setSubject(<#T##subject: String##String#>)
+            // mailController.setMessageBody(<#T##body: String##String#>, isHTML: )
+            
+            self.present(mailController, animated: true, completion: nil)
+            
+        }else{
+            return
+        }
+        
+        
+        
+        
+        
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if let _ = error {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        
+        
+        switch result {
+             
+            
+        case .sent :
+            print("mail sent")
+            
+        case .saved :
+            print("mail saved")
+            
+        case .failed :
+            print("mail failed")
+            
+        case .cancelled :
+            print("cancled")
+            
+        default:
+            fatalError()
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
 }
