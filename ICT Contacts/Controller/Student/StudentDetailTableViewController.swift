@@ -49,10 +49,7 @@ class StudentDetailTableViewController: UITableViewController {
                    studentYearLbl.text = studentData?.year
                    studentEmailLbl.text = studentData?.email
                    studentPhoneLbl.text = studentData?.phone
-        
-        
-        
-        
+
         
         
         

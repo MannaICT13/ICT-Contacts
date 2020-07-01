@@ -35,6 +35,7 @@ class StudentViewController: UIViewController {
         
         
     }
+    
     private func loadStudentData(){
         
           student = StudentDatabaseHelper.studentInstance.getStudentData()
@@ -63,6 +64,8 @@ class StudentViewController: UIViewController {
 
 
 }
+
+
 
 
 extension StudentViewController : UITableViewDataSource,UITableViewDelegate{
